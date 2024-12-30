@@ -1,3 +1,4 @@
+/* Grundlegende Styles */
 * {
     margin: 0;
     padding: 0;
@@ -5,64 +6,98 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
 }
 
-header {
-    background: #fff;
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-}
-
+/* Header/Hero Bereich */
 .hero {
-    height: 100vh;
+    height: 50vh;
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/header.jpg');
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f8f8f8;
-}
-
-section {
-    padding: 4rem 2rem;
+    color: white;
     text-align: center;
 }
 
-h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+/* Navigation */
+.main-nav {
+    background: #000;
+    padding: 1rem 0;
 }
 
-h2 {
-    margin-bottom: 2rem;
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.event-details {
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+/* Content Bereich */
+.content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* RSVP Formular */
+.rsvp-form {
     max-width: 600px;
     margin: 0 auto;
 }
 
-footer {
-    text-align: center;
-    padding: 1rem;
-    background: #333;
-    color: #fff;
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background: #000;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav li {
+        margin: 0.5rem 0;
+    }
 }

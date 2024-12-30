@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP - Carina & Marian</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <!-- Navigation wie oben -->
+    </nav>
+
+    <main class="content">
+        <h2>Rückmeldung zur Hochzeit</h2>
+        <form id="rsvp-form" class="rsvp-form">
+            <div class="form-group">
+                <label for="name">Name(n):</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="guests">Anzahl der Personen:</label>
+                <input type="number" id="guests" name="guests" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="duration">Übernachtungen:</label>
+                <select id="duration" name="duration" required>
+                    <option value="">Bitte wählen...</option>
+                    <option value="keine">Keine Übernachtung</option>
+                    <option value="1">1 Nacht</option>
+                    <option value="2">2 Nächte</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="allergies">Allergien/Unverträglichkeiten:</label>
+                <textarea id="allergies" name="allergies"></textarea>
+            </div>
+
+            <button type="submit">Absenden</button>
+        </form>
+    </main>
+</body>
+</html>
