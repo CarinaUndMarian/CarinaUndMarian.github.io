@@ -7,25 +7,45 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="hero">
-        <div class="hero-image">
-            <!-- Hier kommt euer Foto hin -->
-            <h1>Carina & Marian</h1>
-            <p>Herzlich willkommen zu unserer Hochzeit</p>
+    <!-- Header mit Bild -->
+    <header class="header">
+        <div class="header-image">
+            <img src="images/header.jpg" alt="Carina und Marian">
+            <div class="welcome-text">
+                <h1>Herzlich willkommen zu unserer Hochzeit</h1>
+            </div>
         </div>
     </header>
 
-    <nav class="main-nav">
+    <!-- Sticky Navigation -->
+    <nav class="nav-bar" id="sticky-nav">
         <ul>
-            <li><a href="pages/rsvp.html">RSVP</a></li>
-            <li><a href="pages/hochzeit.html">HOCHZEIT</a></li>
-            <li><a href="pages/anfahrt.html">ANFAHRT</a></li>
-            <li><a href="pages/tourismus.html">TOURISMUS</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+            <li><a href="#hochzeit">HOCHZEIT</a></li>
+            <li><a href="#anfahrt">ANFAHRT</a></li>
+            <li><a href="#tourismus">TOURISMUS</a></li>
         </ul>
     </nav>
 
-    <main class="content">
-        <!-- Hauptinhalt der Homepage -->
+    <!-- Content Sections -->
+    <main>
+        <section id="rsvp">
+            <!-- RSVP Inhalt -->
+        </section>
+
+        <section id="hochzeit">
+            <!-- Hochzeit Inhalt -->
+        </section>
+
+        <section id="anfahrt">
+            <!-- Anfahrt Inhalt -->
+        </section>
+
+        <section id="tourismus">
+            <!-- Tourismus Inhalt -->
+        </section>
     </main>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
