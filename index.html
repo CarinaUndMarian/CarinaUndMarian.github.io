@@ -23,8 +23,8 @@
         </div>
     </header>
 
-    <!-- Sticky Navigation -->
-    <nav class="nav-bar" id="sticky-nav">
+    <!-- Navigation Bar -->
+    <nav class="nav-bar" id="nav-bar">
         <ul>
             <li><a href="#rsvp">RSVP</a></li>
             <li><a href="#hochzeit">HOCHZEIT</a></li>
@@ -57,28 +57,29 @@
     </main>
 
     <script>
-        // Navigation Bar Hide/Show on Scroll
-        let lastScroll = 0;
-        const navbar = document.querySelector('.nav-bar');
+        // Navigation Bar Sticky Functionality
+        const navbar = document.getElementById('nav-bar');
+        const header = document.querySelector('.header');
+        
+        function updateNavbar() {
+            const headerBottom = header.offsetTop + header.offsetHeight;
+            const scrollPosition = window.scrollY;
 
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll <= 0) {
-                navbar.classList.remove('hidden');
-                return;
+            if (scrollPosition >= headerBottom) {
+                navbar.classList.add('sticky');
+            } else {
+                navbar.classList.remove('sticky');
             }
-            
-            if (currentScroll > lastScroll && !navbar.classList.contains('hidden')) {
-                // Scrolling down
-                navbar.classList.add('hidden');
-            } else if (currentScroll < lastScroll && navbar.classList.contains('hidden')) {
-                // Scrolling up
-                navbar.classList.remove('hidden');
-            }
-            
-            lastScroll = currentScroll;
-        });
+        }
+
+        // Initial check
+        updateNavbar();
+
+        // Check on scroll
+        window.addEventListener('scroll', updateNavbar);
+
+        // Check on window resize
+        window.addEventListener('resize', updateNavbar);
     </script>
 </body>
 </html>

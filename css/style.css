@@ -46,14 +46,13 @@ body {
 .nav-bar {
     background-color: rgba(0, 0, 0, 0.9);
     width: 100%;
-    position: fixed;
-    top: 0;
+    position: relative; /* Standardposition: relativ */
     z-index: 1000;
-    transition: transform 0.3s ease-in-out;
 }
 
-.nav-bar.hidden {
-    transform: translateY(-100%);
+.nav-bar.sticky {
+    position: fixed; /* Wird durch JavaScript auf fixed gesetzt */
+    top: 0;
 }
 
 .nav-bar ul {
@@ -86,8 +85,12 @@ body {
 /* Content Sections */
 section {
     min-height: 100vh;
-    padding: 6rem 2rem 2rem;
-    scroll-margin-top: 3rem;
+    padding: 2rem;
+}
+
+/* Wenn die Navigation sticky ist, füge Padding oben hinzu */
+.nav-bar.sticky + main section:first-child {
+    padding-top: calc(2rem + 48px); /* 48px ist ungefähr die Höhe der Navbar */
 }
 
 /* Responsive Design */
@@ -102,7 +105,11 @@ section {
     }
 
     section {
-        padding: 4rem 1rem 1rem;
+        padding: 1rem;
+    }
+
+    .nav-bar.sticky + main section:first-child {
+        padding-top: calc(1rem + 41px); /* 41px ist ungefähr die Höhe der mobilen Navbar */
     }
 }
 
