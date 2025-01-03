@@ -4,14 +4,20 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 /* Header Styles */
 .header {
     width: 100%;
-    height: 50vh; /* Halbe Bildschirmhöhe */
+    height: 100vh;
+    position: relative;
 }
 
 .header-image {
@@ -33,15 +39,21 @@ body {
     transform: translate(-50%, -50%);
     color: white;
     text-align: center;
+    width: 90%;
 }
 
 /* Navigation Styles */
 .nav-bar {
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.9);
     width: 100%;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-bar.hidden {
+    transform: translateY(-100%);
 }
 
 .nav-bar ul {
@@ -63,17 +75,40 @@ body {
     padding: 1rem 0;
     display: block;
     width: 100%;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.nav-bar a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Content Sections */
 section {
     min-height: 100vh;
-    padding: 2rem;
+    padding: 6rem 2rem 2rem;
+    scroll-margin-top: 3rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .header {
-        height: 30vh; /* Kleinere Höhe auf mobilen Geräten */
+    .nav-bar a {
+        font-size: 0.8rem;
+        padding: 0.8rem 0;
+    }
+
+    .welcome-text h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 4rem 1rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-bar a {
+        font-size: 0.7rem;
+        padding: 0.6rem 0;
     }
 }

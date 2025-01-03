@@ -16,8 +16,7 @@
     <!-- Header mit Bild -->
     <header class="header">
         <div class="header-image">
-            <!-- Passe den Bildpfad entsprechend an -->
-            <img src="./images/header.jpg" alt="Carina und Marian">
+            <img src="./images/header.jpg" alt="Hochzeitsbild">
             <div class="welcome-text">
                 <h1>Herzlich willkommen zu unserer Hochzeit</h1>
             </div>
@@ -37,22 +36,49 @@
     <!-- Content Sections -->
     <main>
         <section id="rsvp">
-            <!-- RSVP Inhalt -->
+            <h2>RSVP</h2>
+            <!-- RSVP Inhalt hier -->
         </section>
 
         <section id="hochzeit">
-            <!-- Hochzeit Inhalt -->
+            <h2>Hochzeit</h2>
+            <!-- Hochzeit Inhalt hier -->
         </section>
 
         <section id="anfahrt">
-            <!-- Anfahrt Inhalt -->
+            <h2>Anfahrt</h2>
+            <!-- Anfahrt Inhalt hier -->
         </section>
 
         <section id="tourismus">
-            <!-- Tourismus Inhalt -->
+            <h2>Tourismus</h2>
+            <!-- Tourismus Inhalt hier -->
         </section>
     </main>
 
-    <script src="js/main.js"></script>
+    <script>
+        // Navigation Bar Hide/Show on Scroll
+        let lastScroll = 0;
+        const navbar = document.querySelector('.nav-bar');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                navbar.classList.remove('hidden');
+                return;
+            }
+            
+            if (currentScroll > lastScroll && !navbar.classList.contains('hidden')) {
+                // Scrolling down
+                navbar.classList.add('hidden');
+            } else if (currentScroll < lastScroll && navbar.classList.contains('hidden')) {
+                // Scrolling up
+                navbar.classList.remove('hidden');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
 </body>
 </html>
